@@ -15,7 +15,7 @@ public class Gretter {
 	public String greet() throws ParseException {
 		Integer time = Integer.parseInt(new SimpleDateFormat("HHmmssSSS").format(appDate.now()));
 		if(morningStart <= time && time < dayTimeStart){
-			return "おはよう";	
+			return "おはよう";
 		} else if(dayTimeStart <= time && time < eveningStart){
 			return "こんにちは";
 		}else{
