@@ -1,7 +1,10 @@
+import static org.junit.Assert.*;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import org.junit.Test;
 
@@ -29,5 +32,20 @@ public class SandBox {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		System.out.println(calendar.get(Calendar.MILLISECOND));
+	}
+	
+	@Test
+	public void デフォルトロケールの仕様確認() throws Exception {
+		System.out.println(Locale.getDefault());
+	}
+
+	@Test
+	public void ロケールの仕様確認_日本の場合() throws Exception {
+		System.out.println(Locale.JAPAN);
+		System.out.println(Locale.JAPAN.getLanguage());
+		System.out.println(Locale.JAPANESE);
+		System.out.println(Locale.US);
+		System.out.println(Locale.US.getLanguage());
+		System.out.println(Locale.ENGLISH);
 	}
 }

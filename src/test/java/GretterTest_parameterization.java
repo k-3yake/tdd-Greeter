@@ -1,22 +1,23 @@
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 @RunWith(Enclosed.class)
 public class GretterTest_parameterization {
 
 	@RunWith(Theories.class)
 	public static class 時間帯ごとの挨拶のテスト {
-		
 		private static final String morningGreet = "おはよう";
 		private static final String dayTimeGreet = "こんにちは";
 		private static final String eveningGreet = "こんばんは";
@@ -47,6 +48,14 @@ public class GretterTest_parameterization {
 			};
 			String actual = new Gretter(appDate).greet();
 			assertThat(actual , is(data[expectGreet]));
+		}
+	}
+	
+	@RunWith(JUnit4.class)
+	public static class ロケールごとの挨拶のテスト{
+		@Test
+		public void 朝でロケールがenの場合_goodmorningを返す() throws Exception {
+			
 		}
 	}
 }
