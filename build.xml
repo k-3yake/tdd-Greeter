@@ -20,6 +20,7 @@
 	</target>
 
 	<target name="junit" depends="compile">
+		<mkdir dir="reports" />
 		<junit printsummary="yes" >
 			<formatter type="xml"/>
 			<classpath refid="classPath"/>
@@ -27,7 +28,6 @@
 				<fileset dir="src/test/java" includes="*Test.java" />
 			</batchtest>
 		</junit>
-		<mkdir dir="reports" />
 		<junitreport todir="./reports">
 		  <fileset dir="./reports">
 		    <include name="TEST-*.xml"/>
