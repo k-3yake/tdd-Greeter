@@ -9,6 +9,7 @@
 	
 	<target name="clean">
 		<delete dir="build" />
+		<delete dir="reports" />
 	</target>
 
 	<target name="compile" depends="clean">
@@ -24,9 +25,14 @@
 			<formatter type="plain"/>
 			<batchtest fork="yes">
 				<fileset dir="src/test/java" includes="*Test.java" />
-				
-				
 			</batchtest>
 		</junit>
+		<mkdir dir="reports" />
+		<junitreport todir="./reports">
+		  <fileset dir="./reports">
+		    <include name="TEST-*.xml"/>
+		  </fileset>
+		  <report format="frames" todir="./report/html"/>
+		</junitreport>
 	</target>
 </project>
