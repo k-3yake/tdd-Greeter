@@ -14,7 +14,7 @@ public class GretterTest {
 
 	@Test
 	public void 挨拶のテスト_5時丁度の場合_おはようを返す() throws ParseException {
-		doTestGreet("05:00:00.000", morningGreet);
+		doTestGreet("05:00:00.000", morningGreet + "faile");
 	}
 
 	@Test
