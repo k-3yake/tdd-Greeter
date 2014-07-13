@@ -21,9 +21,9 @@
 
 	<target name="junit" depends="compile">
 		<junit printsummary="yes" >
+			<formatter type="xml"/>
 			<classpath refid="classPath"/>
-			<formatter type="plain"/>
-			<batchtest fork="yes">
+			<batchtest fork="yes" todir="reports">
 				<fileset dir="src/test/java" includes="*Test.java" />
 			</batchtest>
 		</junit>
@@ -32,7 +32,7 @@
 		  <fileset dir="./reports">
 		    <include name="TEST-*.xml"/>
 		  </fileset>
-		  <report format="frames" todir="./report/html"/>
+		  <report format="frames" todir="./reports/html"/>
 		</junitreport>
 	</target>
 </project>
