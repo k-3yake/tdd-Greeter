@@ -24,6 +24,7 @@
 			<formatter type="plain"/>
 			<batchtest fork="yes">
 				<fileset dir="src/test/java" includes="*Test.java" />
+				
 			</batchtest>
 		</junit>
 	</target>
